@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasie Mini CSS Framework</title>
+  <link rel="stylesheet" href="css/new-style.css">
+  <script>
+    function toggleModal() {
+      const modal = document.getElementById('myModal');
+      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+    function toggleNavbar() {
+      document.getElementById("navbarNav").classList.toggle("show");
+    }
+
+    function copyCode(button) {
+      const pre = button.nextElementSibling;
+      const code = pre.innerText;
+
+      navigator.clipboard.writeText(code).then(() => {
+        button.innerText = 'Copied!';
+        setTimeout(() => {
+          button.innerText = 'Copy';
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+
+  </script>
+</head>
+<body class="app-bg-light app-text-dark">
+  <nav class="app-navbar app-navbar-expand-sm app-d-flex app-justify-content-center app-fixed app-bg-white app-border-grey-200 app-border-solid app-border-bottom-1 app-px-3 app-py-3">
+    <a class="app-navbar-brand" href="#">
+      <img src="img/logo.png" alt="logo">
+    </a>
+  </nav>
+  
+  <main>
+    <div class="container-fluid">
+        <div class="app-content">
+          <input type="radio" name="slider" checked id="tab-typography" class="app-d-none">
+          <input type="radio" name="slider" id="tab-heading" class="app-d-none">
+          <input type="radio" name="slider" id="tab-card" class="app-d-none">
+          <input type="radio" name="slider" id="tab-badge" class="app-d-none">
+          <input type="radio" name="slider" id="tab-padding" class="app-d-none">
+          <input type="radio" name="slider" id="tab-modal" class="app-d-none">
+          <input type="radio" name="slider" id="tab-button" class="app-d-none">
+          <input type="radio" name="slider" id="tab-radio-button" class="app-d-none">
+          <input type="radio" name="slider" id="tab-switch-button" class="app-d-none">
+          <input type="radio" name="slider" id="tab-check-box" class="app-d-none">
+          <input type="radio" name="slider" id="tab-progressbar" class="app-d-none">
+          <input type="radio" name="slider" id="tab-header" class="app-d-none">
+          <input type="radio" name="slider" id="tab-form" class="app-d-none">
+          <input type="radio" name="slider" id="tab-footer" class="app-d-none">
+          <input type="radio" name="slider" id="tab-background" class="app-d-none">
+          
+          <div class="list-view app-fixed">
+            <div class="list">
+                <label for="tab-typography" class="tab-typography">
+                    <span>Text</span>
+                </label>
+                <label for="tab-heading" class="tab-heading">
+                    <span>Heading</span>
+                </label>
+                <label for="tab-background" class="tab-background">
+                    <span>Background</span>
+                </label>
+                <label for="tab-card" class="tab-card">
+                    <span>Card</span>
+                </label>
+                <label for="tab-badge" class="tab-badge">
+                    <span>Badge</span>
+                </label>
+                <label for="tab-padding" class="tab-padding">
+                    <span>Padding</span>
+                </label>
+                <label for="tab-button" class="tab-button">
+                    <span>Button</span>
+                </label>
+                <label for="tab-radio-button" class="tab-radio-button">
+                    <span>Radio Button</span>
+                </label>
+                <label for="tab-switch-button" class="tab-switch-button">
+                    <span>Switch Button</span>
+                </label>
+                <label for="tab-check-box" class="tab-check-box">
+                    <span>Check Box</span>
+                </label>
+                <label for="tab-progressbar" class="tab-progressbar">
+                    <span>Progress Bar</span>
+                </label>
+                <label for="tab-header" class="tab-header">
+                    <span>Header</span>
+                </label>
+                <label for="tab-form" class="tab-form">
+                    <span>Form</span>
+                </label>
+                <label for="tab-footer" class="tab-footer">
+                    <span>Footer</span>
+                </label>
+                <div class="slider"></div>
+            </div>
+          </div>
+  
+          <div class="text-content app-ml-auto">
+              <div class="tab-typography text">
+                <div class="season_content">
+                  <h1>Text</h1>
+                  <p>A collection of utility classes to style text.</p>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Font Size</h3>
+                    <p>The following classes will modify the font size of your text.</p>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-sm</code></td>
+                          <td><span class="app-text-sm">Add this class to decrease the font size.</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-default</code></td>
+                          <td><span class="app-text-default">Add this class to set default the font size.</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-large</code></td>
+                          <td><span class="app-text-large">Add this class to increase the font size.</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Font weight</h3>
+                    <p>Add one of the following classes to modify the font-weight of your text.</p>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-light</code></td>
+                          <td><span class="app-text-light">300</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-normal</code></td>
+                          <td><span class="app-text-normal">400</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-bold</code></td>
+                          <td><span class="app-text-bold">700</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-lighter</code></td>
+                          <td><span class="app-text-lighter">lighter</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-bolder</code></td>
+                          <td><span class="app-text-bolder">bolder</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Font style</h3>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-italic</code></td>
+                          <td><span class="app-text-italic">app-text-italic</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Text transform</h3>
+                    <p>The following classes will transform the text into uppercased, capitalized or lowercase characters.</p>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-capitalize</code></td>
+                          <td><span class="app-text-capitalize">app-text-capitalize</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-uppercase</code></td>
+                          <td><span class="app-text-uppercase">app-text-uppercase</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-lowercase</code></td>
+                          <td><span class="app-text-lowercase">app-text-lowercase</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Text decoration</h3>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-decoration-none</code></td>
+                          <td><span class="app-text-decoration-none">app-text-decoration-none</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-decoration-underline</code></td>
+                          <td><span class="app-text-decoration-underline">app-text-decoration-underline</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-decoration-line-through</code></td>
+                          <td><span class="app-text-decoration-line-through">app-text-decoration-line-through</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Text color</h3>
+                    <p>Use one of these classes to apply a different color to text elements.</p>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-primary</code></td>
+                          <td><span class="app-text-primary">app-text-primary</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-white</code></td>
+                          <td><span class="app-text-white app-bg-black">app-text-white</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-black</code></td>
+                          <td><span class="app-text-black">app-text-black</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-charcoal</code></td>
+                          <td><span class="app-text-charcoal">app-text-charcoal</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-dark-charcoal</code></td>
+                          <td><span class="app-text-dark-charcoal">app-text-dark-charcoal</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-dark-grey</code></td>
+                          <td><span class="app-text-dark-grey">app-text-dark-grey</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-ash-grey</code></td>
+                          <td><span class="app-text-ash-grey">app-text-ash-grey</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-grey</code></td>
+                          <td><span class="app-text-grey">app-text-grey</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-light-grey</code></td>
+                          <td><span class="app-text-light-grey">app-text-light-grey</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-neutral-grey</code></td>
+                          <td><span class="app-text-neutral-grey">app-text-neutral-grey</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-medium-grey</code></td>
+                          <td><span class="app-text-medium-grey">app-text-medium-grey</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-grey-100</code></td>
+                          <td><span class="app-text-grey-100">app-text-grey-100</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-grey-300</code></td>
+                          <td><span class="app-text-grey-300">app-text-grey-300</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-grey-400</code></td>
+                          <td><span class="app-text-grey-400">app-text-grey-400</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-grey-500</code></td>
+                          <td><span class="app-text-grey-500">app-text-grey-500</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-grey-600</code></td>
+                          <td><span class="app-text-grey-600">app-text-grey-600</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-deep-cyan</code></td>
+                          <td><span class="app-text-deep-cyan">app-text-deep-cyan</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-semi-transparent</code></td>
+                          <td><span class="app-text-semi-transparent">app-text-semi-transparent</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-deep-navy-blue</code></td>
+                          <td><span class="app-text-deep-navy-blue">app-text-deep-navy-blue</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-yellow-50</code></td>
+                          <td><span class="app-text-yellow-50 app-bg-black">app-text-yellow-50</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-yellow-700</code></td>
+                          <td><span class="app-text-yellow-700">app-text-yellow-700</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-green-500</code></td>
+                          <td><span class="app-text-green-500">app-text-green-500</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-green-700</code></td>
+                          <td><span class="app-text-green-700">app-text-green-700</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-green-800</code></td>
+                          <td><span class="app-text-green-800">app-text-green-800</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-pastel-blue</code></td>
+                          <td><span class="app-text-pastel-blue">app-text-pastel-blue</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Text alignment</h3>
+                    <p>Add one of these useful classes to align your text.</p>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-left</code></td>
+                          <td><span class="app-text-left app-d-block">app-text-left</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-right</code></td>
+                          <td><span class="app-text-right app-d-block">app-text-right</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-center</code></td>
+                          <td><span class="app-text-center app-d-block">app-text-center</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-justify</code></td>
+                          <td><span class="app-text-justify app-d-block">app-text-justify</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Vertical alignment</h3>
+                    <p>Add one of these classes to vertically align text to an object.</p>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-top</code></td>
+                          <td><span class="app-text-top">Aligns text to the top.</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-middle</code></td>
+                          <td><span class="app-text-middle">Centers text vertically.</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-bottom</code></td>
+                          <td><span class="app-text-bottom">Aligns text to the bottom.</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-baseline</code></td>
+                          <td><span class="app-text-baseline">Aligns text to the baseline.</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Text wrapping</h3>
+                    <p>Add one of these useful classes to wrap your text.</p>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-text-wrap</code></td>
+                          <td><span class="app-text-wrap">Text from wrapping into multiple lines.</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-text-no-wrap</code></td>
+                          <td><span class="app-text-no-wrap">Prevents text from wrapping into multiple lines.</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+                </div> 
+              </div>
+              <div class="tab-heading text">
+                <div class="season_content">
+                  <h1>Heading</h1>
+                  <p>Define different styles for headings.</p>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Size modifiers</h3>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Tags</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>h1</code></td>
+                          <td><h1 class="h1">Heading 1</h1></td>
+                        </tr>
+                        <tr>
+                          <td><code>h2</code></td>
+                          <td><h2 class="h2">Heading 2</h2></td>
+                        </tr>
+                        <tr>
+                          <td><code>h3</code></td>
+                          <td><h3 class="h3">Heading 3</h3></td>
+                        </tr>
+                        <tr>
+                          <td><code>h4</code></td>
+                          <td><h4 class="h4">Heading 4</h4></td>
+                        </tr>
+                        <tr>
+                          <td><code>h5</code></td>
+                          <td><h5 class="h5">Heading 5</h5></td>
+                        </tr>
+                        <tr>
+                          <td><code>h6</code></td>
+                          <td><h6 class="h6">Heading 6</h6></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+                </div> 
+              </div>
+              <div class="tab-background text">
+                <div class="season_content">
+                  <h1>Background</h1>
+                  <p>A collection of utility classes to add different backgrounds to elements.</p>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Background Color</h3>
+                    <div class="app-row">
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-royal-blue">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-royal-blue</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#0A66C2</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-white">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-white</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#FFFFFF</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-black">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-black</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#000000</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-green-500">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-green-500</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#32C765</p>
+                        </div>
+                      </div>
+
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-deep-cyan">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-deep-cyan</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#00979C</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-neutral-grey">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-neutral-grey</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#7F7F7F</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-deep-navy-blue">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-deep-navy-blue</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#002F55</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-light-grey">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-light-grey</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#D9D9D9</p>
+                        </div>
+                      </div>
+
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-grey-50">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-grey-50</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#F2F2F2</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-soft-grey">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-soft-grey</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#E5E5E5</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-whisper-grey">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-whisper-grey</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#EDEDED</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-blue-50">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-blue-50</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#EBEDF9</p>
+                        </div>
+                      </div>
+
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-pale-mint">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-pale-mint</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#DAEDDE</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-pale-steel">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-pale-steel</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#EDEEF0</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-grey-100">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-grey-100</p>
+                          <p class="app-text-black app-mb-0 app-text-center">#D5D5D5</p>
+                        </div>
+                      </div>
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-green-500">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-green-500</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#32C765</p>
+                        </div>
+                      </div>
+
+                      <div class="app-col-sm-3 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-charcoal-grey">
+                          <p class="app-text-white app-mb-2 app-text-center">app-bg-charcoal-grey</p>
+                          <p class="app-text-white app-mb-0 app-text-center">#5B5B5B</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="app-card-box app-mb-4">
+                    <h3>Background Linear Gradient</h3>
+                    <div class="app-row">
+                      <div class="app-col-sm-4 app-mb-3">
+                        <div class="app-card app-border-mist app-border-1 app-border-solid app-bg-yellow-gradient">
+                          <p class="app-text-black app-mb-2 app-text-center">app-bg-yellow-gradient</p>
+                          <p class="app-text-black app-mb-0 app-text-center">linear-gradient(209.92deg, #FFF8DE 0%, #FFDE5E 100%)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-badge text">
+                <div class="season_content">
+                  <h1>Badges</h1>
+                  <p>Easily create nice looking notification badges.</p>
+                  <div class="app-card-box app-mb-4">
+                    <div class="app-d-flex app-justify-content-around app-gap-4">
+                      <span class="not-started-badge">Not Started</span>
+                      <span class="in-progress-badge">In Progress</span>
+                      <span class="completed-badge"><img src="img/Checkmark.svg" alt="tick" height="16" width="16">Completed</span>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      <pre>
+                        <code>
+                          &lt;div class="app-d-flex app-justify-content-around app-gap-4"&gt;
+                            &lt;span class="not-started-badge"&gt;Not Started&lt;/span&gt;
+                            &lt;span class="in-progress-badge"&gt;In Progress&lt;/span&gt;
+                            &lt;span class="completed-badge"&gt;
+                              &lt;img src="img/Checkmark.svg" alt="tick" height="16" width="16"&gt;Completed
+                            &lt;/span&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-card text">
+                <div class="season_content">
+                  <h1>Card</h1>
+                  <p>Create layout boxes with different styles.</p>
+                  <div class="app-card-box app-mb-4">
+                    <div class="app-d-flex app-justify-content-around app-gap-4">
+                      <div class="app-card app-card-shadow-xl app-border-blue-100 app-border-1 app-border-solid">
+                        <h3>Default</h3>
+                        <p>Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                      <div class="app-card app-border-grey-100 app-border-1 app-border-solid">
+                        <h3>Default</h3>
+                        <p>Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                       <div class="app-card app-card-shadow-md app-border-mist app-border-1 app-border-solid">
+                        <h3>Default</h3>
+                        <p>Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      <pre>
+                        <code>
+                          &lt;div class="app-card app-card-shadow-xl app-border-blue-100 app-border-1 app-border-solid"&gt;
+                            &lt;h3&gt;Default&lt;/h3&gt;
+                            &lt;p&gt;Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+                          &lt;/div&gt;
+  
+                          &lt;div class="app-card app-border-grey-100 app-border-1 app-border-solid"&gt;
+                            &lt;h3&gt;Default&lt;/h3&gt;
+                            &lt;p&gt;Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+                          &lt;/div&gt;
+  
+                          &lt;div class="app-card app-card-shadow-md app-border-mist app-border-1 app-border-solid"&gt;
+                            &lt;h3&gt;Default&lt;/h3&gt;
+                            &lt;p&gt;Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-padding text">
+                <div class="season_content">
+                  <h1>Padding</h1>
+                  <p>A collection of utility classes to add spacing between elements and their content.</p>
+
+                  <div class="app-card-box app-mb-4">
+                    <h3>Padding Default</h3>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-p-sm</code></td>
+                          <td><span>padding: 0.5rem;</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-p-md</code></td>
+                          <td><span>padding: 0.625rem;</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-p-lg</code></td>
+                          <td><span>padding: 0.75rem;</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                  <div class="app-card-box app-mb-4">
+                    <h3>Padding</h3>
+          
+                    <table class="app-table">
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>.app-p-1</code></td>
+                          <td><span>padding: 0.25rem;</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-p-2</code></td>
+                          <td><span>padding: 0.5rem;</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-p-3</code></td>
+                          <td><span>padding: 1rem;</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-p-4</code></td>
+                          <td><span>padding: 1.5rem;</span></td>
+                        </tr>
+                        <tr>
+                          <td><code>.app-p-5</code></td>
+                          <td><span>padding: 3rem;</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+                </div> 
+              </div>
+              <div class="tab-modal text">
+                <div class="season_content">
+                  <h1>Modal</h1>
+                  <p>The Modal component consists of an overlay, a dialog and an optional close button. </p>
+                  <div class="app-card-box app-mb-4">
+                    <div class="form-group app-text-center">
+                      <button type="button" class="app-btn-md app-btn-teal-cyan app-w-max app-mb-3" onclick="toggleModal()">Modal Open</button>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            
+                      <pre>
+                        <code>
+                          &lt;div class="app-modal" id="myModal"&gt;
+                            &lt;div class="app-modal-content"&gt;
+                              &lt;button class="app-close-btn" onclick="toggleModal()"&gt;
+                                &lt;img src="img/cross_icon.svg" alt="cross_icon" height="24" width="24"&gt;
+                              &lt;/button&gt;
+                              &lt;div class="modal-body"&gt;
+                                &lt;form action=""&gt;
+                                  &lt;h5 class="app-text-deep-navy-blue app-mb-3"&gt;Contact Us&lt;/h5&gt;
+                                  &lt;p class="app-text-grey"&gt;Please let us know your questions or concerns in regards to the assignment here.&lt;/p&gt;
+
+                                  &lt;div class="app-form-group"&gt;
+                                    &lt;label for="message" class="app-form-label"&gt;Message&lt;/label&gt;
+                                    &lt;textarea id="message" class="app-form-control app-h-auto" name="message" rows="4" cols="50" placeholder="Please write your message..."&gt;&lt;/textarea&gt;
+                                  &lt;/div&gt;
+
+                                  &lt;button type="button" class="app-btn-md app-btn-teal-cyan app-w-full"&gt;Submit&lt;/button&gt;
+
+                                  &lt;div class="app-form-group app-relative"&gt;
+                                    &lt;hr class="app-my-4 app-text-grey-100"/&gt;
+                                  &lt;/div&gt;
+
+                                  &lt;p class="app-text-left app-text-dark-grey"&gt;
+                                    &lt;b class="app-text-bold"&gt;Prefer to call us instead?&lt;/b&gt; 
+                                    We’re available between 9 AM to 5 PM EST time at 
+                                    &lt;a href="#" class="app-text-deep-cyan app-text-decoration-none app-text-bold"&gt;(123) 4567-8901&lt;/a&gt;.
+                                  &lt;/p&gt;
+
+                                  &lt;button type="button" class="app-btn-md app-bg-neutral-grey app-text-white app-w-max app-text-uppercase"&gt;Book a call&lt;/button&gt;
+                                &lt;/form&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+    
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-button text">
+                <div class="season_content">
+                  <h1>Button</h1>
+                  <p>Easily create nice looking buttons, which come in different styles.</p>
+                  <div class="app-card-box app-mb-4">
+                    <div class="form-group">
+                      <button type="button" class="app-btn-md app-btn-teal-cyan app-w-max app-mb-3">SIGN IN</button>
+                      <button type="button" class="app-btn-md app-btn-transparent app-w-max app-mb-3">SIGN IN</button>
+                      <button type="button" class="app-btn-md app-btn-royal-blue app-w-max app-mb-3">SIGN IN</button>
+                      <button class="app-border-pastel-blue app-border-solid app-border-1 app-border-rounded app-rounded-transparent-btn app-bg-white app-mb-3">
+                        <img src="img/profile.svg" alt="user">
+                      </button>
+    
+                      <button type="button" class="app-btn-md app-btn-transparent app-w-max app-d-flex app-justify-content-start app-gap-2 app-mb-3">
+                        <img src="img/Google.svg" alt="Google">
+                        Sign In with Google
+                      </button>
+    
+                      <button type="button" class="app-btn-md app-btn-royal-blue app-w-max app-d-flex app-justify-content-start app-gap-2 app-mb-3">
+                        <img src="img/linkedIn.svg" alt="linkedIn">
+                        Sign In with LinkedIn
+                      </button>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            
+                      <pre>
+                        <code>
+                            &lt;button type="button" class="app-btn-md app-btn-teal-cyan app-w-max app-mb-3"&gt;SIGN IN&lt;/button&gt;
+                            &lt;button type="button" class="app-btn-md app-btn-transparent app-w-max app-mb-3"&gt;SIGN IN&lt;/button&gt;
+                            &lt;button type="button" class="app-btn-md app-btn-royal-blue app-w-max app-mb-3"&gt;SIGN IN&lt;/button&gt;
+
+                            &lt;button class="app-border-pastel-blue app-border-solid app-border-1 app-border-rounded app-rounded-transparent-btn app-bg-white app-mb-3"&gt;
+                              &lt;img src="img/profile.svg" alt="user"&gt;
+                            &lt;/button&gt;
+    
+                            &lt;button type="button" class="app-btn-md app-btn-transparent app-w-max app-d-flex app-justify-content-start app-gap-2 app-mb-3"&gt;
+                              &lt;img src="img/Google.svg" alt="Google"&gt;
+                              Sign In with Google
+                            &lt;/button&gt;
+    
+                            &lt;button type="button" class="app-btn-md app-btn-royal-blue app-w-max app-d-flex app-justify-content-start app-gap-2 app-mb-3"&gt;
+                              &lt;img src="img/linkedIn.svg" alt="linkedIn"&gt;
+                              Sign In with LinkedIn
+                            &lt;/button&gt;
+                        </code>
+                      </pre>
+    
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-radio-button text">
+                <div class="season_content">
+                  <h1>Radio Button</h1>
+                  <div class="app-card-box app-mb-4">
+                    <div class="form-group">
+                      <div class="app-form-radio-button mb-3">
+                        <input type="radio" id="section1" name="radio-group" checked>
+                        <label for="section1">Form I-9 Section 1 Completed</label>
+                      </div>
+                      <div class="app-form-radio-button mb-3">
+                        <input type="radio" id="section2" name="radio-group">
+                        <label for="section2">Form I-9 Section 2 Completed</label>
+                      </div>
+                    </div>
+                  
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            
+                      <pre>
+                        <code>
+                          &lt;div class="form-group"&gt;
+                            &lt;div class="app-form-radio-button mb-3"&gt;
+                              &lt;input type="radio" id="section1" name="radio-group" checked&gt;
+                              &lt;label for="section1"&gt;Form I-9 Section 1 Completed&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class="app-form-radio-button mb-3"&gt;
+                              &lt;input type="radio" id="section2" name="radio-group"&gt;
+                              &lt;label for="section2"&gt;Form I-9 Section 2 Completed&lt;/label&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-switch-button text">
+                
+                <div class="season_content">
+                  <h1>Switch Button</h1>
+                  <div class="app-card-box app-text-center app-mb-4">
+                    <div class="form-group">
+                      <label class="app-switch">
+                        <input type="checkbox">
+                        <small>
+                          <span></span>
+                        </small>
+                      </label>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            
+                      <pre>
+                        <code>
+                          &lt;div class="form-group"&gt;
+                            &lt;label class="app-switch"&gt;
+                              &lt;input type="checkbox"&gt;
+                              &lt;small&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                              &lt;/small&gt;
+                            &lt;/label&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+            
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-check-box text">
+                <div class="season_content">
+                  <h1>Check Box</h1>
+                  <div class="app-card-box app-mb-4">
+                    <h3>Rounded Checkbox</h3>
+                    <div class="form-group app-text-center">
+                      <div class="app-form-checkbox app-checkbox-rounded mb-3">
+                        <input type="checkbox" id="complete" checked>
+                        <label for="complete">Complete Step 1 of Onboarding</label>
+                      </div>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            
+                      <pre>
+                        <code>
+                          &lt;div class="form-group app-text-center"&gt;
+                            &lt;div class="app-form-checkbox app-checkbox-rounded mb-3"&gt;
+                              &lt;input type="checkbox" id="complete" checked&gt;
+                              &lt;label for="complete"&gt;Complete Step 1 of Onboarding&lt;/label&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+
+                    </div>
+                  </div>
+
+                  <div class="app-card-box app-mb-4">
+                    <h3>Square Checkbox</h3>
+                    <div class="form-group app-text-center">
+                      <div class="app-form-checkbox app-checkbox-square mb-3">
+                        <input type="checkbox" id="complete1" checked>
+                        <label for="complete1">I Consent to receive my T4 Electronically</label>
+                      </div>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            
+                      <pre>
+                        <code>
+                          &lt;div class="form-group app-text-center"&gt;
+                            &lt;div class="app-form-checkbox app-checkbox-square mb-3"&gt;
+                              &lt;input type="checkbox" id="complete1" checked&gt;
+                              &lt;label for="complete1"&gt;I Consent to receive my T4 Electronically&lt;/label&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-progressbar text">
+                <div class="season_content">
+                  <h1>Progress Bar</h1>
+                  <div class="app-card-box app-mb-4">
+                    <div class="form-group">
+                      <div class="app-progress-div">
+                        <label id="progress-label" for="progress1" class="app-form-label">3/5</label>
+                        <progress id="progress1" class="app-progress app-progress1" max="5" value="3"></progress>
+                      </div>
+                    </div>
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            
+                      <pre>
+                        <code>
+                          &lt;div class="form-group"&gt;
+                            &lt;div class="app-progress-div"&gt;
+                              &lt;label id="progress-label" for="progress1" class="app-form-label"&gt;3/5&lt;/label&gt;
+                              &lt;progress id="progress1" class="app-progress app-progress1" max="5" value="3"&gt;&lt;/progress&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-header text">
+                <div class="season_content">
+                  <h1>Navbar</h1>
+                  <div class="app-card-box app-mb-4">
+                    <nav class="app-navbar app-navbar-expand-sm app-bg-white app-border-grey-200 app-border-solid app-border-bottom-1 app-px-3 app-py-3 ">
+                      <a class="app-navbar-brand" href="#">
+                        <img src="img/logo.png" alt="logo">
+                      </a>
+                      <button class="app-navbar-toggler" onclick="toggleNavbar()">☰</button>
+                      <div class="app-navbar-collapse" id="navbarNav">
+                        <ul class="app-navbar-nav">
+                          <li class="app-nav-item"><button class="app-btn-md app-btn-teal-cyan">Services</button></li>
+                          <li class="app-nav-item">
+                            <a class="app-nav-link app-border-pastel-blue app-border-solid app-border-1 app-border-rounded app-rounded-transparent-btn" href="#">
+                              <img src="img/profile.svg" alt="user">
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+                          <code>
+                            &lt;nav class="app-navbar app-navbar-expand-sm app-bg-white app-border-grey-200 app-border-solid app-border-bottom-1 app-px-3 app-py-3 "&gt;
+                              &lt;a class="app-navbar-brand" href="#"&gt;
+                                &lt;img src="img/logo.png" alt="logo"&gt;
+                              &lt;/a&gt;
+                              &lt;button class="app-navbar-toggler" onclick="toggleNavbar()"&gt;☰&lt;/button&gt;
+                              &lt;div class="app-navbar-collapse" id="navbarNav"&gt;
+                                &lt;ul class="app-navbar-nav"&gt;
+                                  &lt;li class="app-nav-item"&gt;&lt;button class="app-btn-md app-btn-teal-cyan"&gt;Services&lt;/button&gt;&lt;/li&gt;
+                                  &lt;li class="app-nav-item"&gt;
+                                    &lt;a class="app-nav-link app-border-pastel-blue app-border-solid app-border-1 app-border-rounded app-rounded-transparent-btn" href="#"&gt;
+                                      &lt;img src="img/profile.svg" alt="user"&gt;
+                                    &lt;/a&gt;
+                                  &lt;/li&gt;
+                                &lt;/ul&gt;
+                              &lt;/div&gt;
+                            &lt;/nav&gt;
+                          </code>
+                        </pre>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-form text">
+                <div class="season_content">
+                  <h1>Form</h1>
+                  <p>Easily create nice looking forms with different styles and layouts.</p>
+                  <div class="app-card-box app-mb-4">
+                    <div class="app-card app-card-shadow-xl app-border-blue-100 app-border-1 app-border-solid app-py-5 app-px-4">
+                      <form action="">
+            
+                        <h4 class="app-text-black app-fw-normal app-mb-3">Sign In</h4>
+                        <p class="app-text-grey app-mb-3">Complete your onboarding, view pay history, and submit times easily through the app.</p>
+            
+                        <div class="app-form-group">
+                          <label for="name" class="app-form-label">Email</label>
+                          <input type="email" id="name" class="app-form-control" placeholder="max.doe@gmail.com" />
+                        </div>
+            
+                        <div class="app-form-group">
+                          <label for="name" class="app-form-label">Name</label>
+                          <input type="text" id="name" class="app-form-control" placeholder="Enter name" />
+                        </div>
+
+                        <div class="app-form-group">
+                          <label for="country" class="app-form-label">Select Country</label>
+                          <select name="country" id="country" class="app-form-control">
+                            <option value="pakistan">Pakistan</option>
+                            <option value="turkey">Turkey</option>
+                            <option value="japan">Japan</option>
+                          </select>
+                        </div>
+            
+                        <div class="app-form-group-icon">
+                          <label for="date" class="app-form-label">License Expiry Date</label>
+                          <input type="date" id="date" class="app-form-control" placeholder="YYYY-MM-DD" />
+                          <img src="img/calendar.svg" alt="calendar" onclick="document.getElementById('date').showPicker()">
+                        </div>
+
+                        <div class="app-form-group">
+                          <label for="message" class="app-form-label">Message</label>
+                          <textarea id="message" class="app-form-control app-h-auto" name="message" rows="4" cols="50" placeholder="Message..."></textarea>
+                        </div>
+            
+                        <button type="button" class="app-btn-md app-btn-teal-cyan app-w-full">SIGN IN</button>
+            
+                        <div class="app-form-group app-relative">
+                          <hr class="app-my-4 app-text-grey-100"/>
+                          <span class="app-text-grey-500 app-absolute translate-center app-left-half app-top-half app-bg-white app-p-2 app-transform">OR</span>
+                        </div>
+            
+                        <button type="button" class="app-btn-md app-btn-transparent app-w-full app-d-flex app-justify-content-start app-gap-2 app-mb-3">
+                          <img src="img/Google.svg" alt="Google">
+                          Sign In with Google
+                        </button>
+            
+                        <button type="button" class="app-btn-md app-btn-royal-blue app-w-full app-d-flex app-justify-content-start app-gap-2 app-mb-3">
+                          <img src="img/linkedIn.svg" alt="linkedIn">
+                          Sign In with LinkedIn
+                        </button>
+            
+                        <p class="app-text-center app-text-grey-400 app-mb-0">By signing in, you are agreeing to our <b>Terms of Service</b> and <b>Privacy Policy.</b></p>
+            
+                      </form>
+                    </div>
+            
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        
+                        <pre style="text-align: left;">
+                          <code style="display: block; text-align: left;">
+                            &lt;form action=""&gt;
+            
+                              &lt;h4 class="app-text-black app-fw-normal app-mb-3"&gt;Sign In&lt;/h4&gt;
+                              &lt;p class="app-text-grey app-mb-3"&gt;Complete your onboarding, view pay history, and submit times easily through the app.&lt;/p&gt;
+            
+                              &lt;div class="app-form-group"&gt;
+                                &lt;label for="name" class="app-form-label"&gt;Email&lt;/label&gt;
+                                &lt;input type="email" id="name" class="app-form-control" placeholder="max.doe@gmail.com" /&gt;
+                              &lt;/div&gt;
+            
+                              &lt;div class="app-form-group"&gt;
+                                &lt;label for="name" class="app-form-label"&gt;Name&lt;/label&gt;
+                                &lt;input type="text" id="name" class="app-form-control" placeholder="Enter name" /&gt;
+                              &lt;/div&gt;
+
+                              &lt;div class="app-form-group"&gt;
+                                &lt;label for="country" class="app-form-label"&gt;Select Country&lt;/label&gt;
+                                &lt;select name="country" id="country" class="app-form-control"&gt;
+                                  &lt;option value="pakistan"&gt;Pakistan&lt;/option&gt;
+                                  &lt;option value="turkey"&gt;Turkey&lt;/option&gt;
+                                  &lt;option value="japan"&gt;Japan&lt;/option&gt;
+                                &lt;/select&gt;
+                              &lt;/div&gt;
+            
+                              &lt;div class="app-form-group-icon"&gt;
+                                &lt;label for="date" class="app-form-label"&gt;License Expiry Date&lt;/label&gt;
+                                &lt;input type="date" id="date" class="app-form-control" placeholder="YYYY-MM-DD" /&gt;
+                                &lt;img src="img/calendar.svg" alt="calendar" onclick="document.getElementById('date').showPicker()"&gt;
+                              &lt;/div&gt;
+
+                              &lt;div class="app-form-group"&gt;
+                                &lt;label for="message" class="app-form-label"&gt;Message&lt;/label&gt;
+                                &lt;textarea id="message" class="app-form-control app-h-auto" name="message" rows="4" cols="50" placeholder="Message..."&gt;&lt;/textarea&gt;
+                              &lt;/div&gt;
+            
+                              &lt;button type="button" class="app-btn-md app-btn-teal-cyan app-w-full"&gt;SIGN IN&lt;/button&gt;
+            
+                              &lt;div class="app-form-group app-relative"&gt;
+                                &lt;hr class="app-my-4 app-text-grey-100"/&gt;
+                                &lt;span class="app-text-grey-500 app-absolute translate-center app-left-half app-top-half app-bg-white app-p-2 app-transform"&gt;OR&lt;/span&gt;
+                              &lt;/div&gt;
+            
+                              &lt;button type="button" class="app-btn-md app-btn-transparent app-w-full app-d-flex app-justify-content-start app-gap-2 app-mb-3"&gt;
+                                &lt;img src="img/Google.svg" alt="Google"&gt;
+                                Sign In with Google
+                              &lt;/button&gt;
+            
+                              &lt;button type="button" class="app-btn-md app-btn-royal-blue app-w-full app-d-flex app-justify-content-start app-gap-2 app-mb-3"&gt;
+                                &lt;img src="img/linkedIn.svg" alt="linkedIn"&gt;
+                                Sign In with LinkedIn
+                              &lt;/button&gt;
+            
+                              &lt;p class="app-text-center app-text-grey-400 app-mb-0"&gt;By signing in, you are agreeing to our &lt;b&gt;Terms of Service&lt;/b&gt; and &lt;b&gt;Privacy Policy.&lt;/b&gt;&lt;/p&gt;
+            
+                            &lt;/form&gt;
+                          </code>
+                        </pre>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="tab-footer text">
+                <div class="season_content">
+                  <h1>Footer</h1>
+                  <div class="app-card-box app-mb-4">
+                    <footer>
+                      <div class="app-d-flex app-justify-content-between app-py-4 app-px-4 ">
+                        <span class="app-text-grey app-fs-6 app-fw-normal">©  Ian Martin Group Inc. • RAISE is a service mark of the Ian Martin Group Inc.</span>
+                        <div class="app-d-flex app-gap-4 app-align-items-center">
+                          <a href="#" class="app-fw-bold">Privacy</a>
+                          <a href="#" class="app-fw-bold">Accessibility</a>
+                        </div>
+                      </div>
+                    </footer>
+          
+                    <div class="code-container app-mt-3">
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>
+                          <code>
+                            &lt;footer&gt;
+                              &lt;div class="app-d-flex app-justify-content-between app-py-4 app-px-4"&gt;
+                                &lt;span class="app-text-grey app-fs-6 app-fw-normal"&gt;©  Ian Martin Group Inc. • RAISE is a service mark of the Ian Martin Group Inc.&lt;/span&gt;
+                                &lt;div class="app-d-flex app-gap-4 app-align-items-center"&gt;
+                                  &lt;a href="#" class="app-fw-bold"&gt;Privacy&lt;/a&gt;
+                                  &lt;a href="#" class="app-fw-bold"&gt;Accessibility&lt;/a&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/footer&gt;
+                          </code>
+                        </pre>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+          </div>
+        </div>
+    </div>
+  </main>
+  
+
+  <!-- Modal -->
+  <div class="app-modal" id="myModal">
+    <div class="app-modal-content">
+      <button class="app-close-btn" onclick="toggleModal()">
+        <img src="img/cross_icon.svg" alt="cross_icon" height="24" width="24">
+      </button>
+      <div class="modal-body">
+        <form action="">
+          <h5 class="app-text-deep-navy-blue app-mb-3">Contact Us</h5>
+          <p class="app-text-grey">Please let us know your questions or concerns in regards to the assignment here.</p>
+
+          <div class="app-form-group">
+            <label for="message" class="app-form-label">Message</label>
+            <textarea id="message" class="app-form-control app-h-auto" name="message" rows="4" cols="50" placeholder="Please write your message..."></textarea>
+          </div>
+
+          <button type="button" class="app-btn-md app-btn-teal-cyan app-w-full">Submit</button>
+
+          <div class="app-form-group app-relative">
+            <hr class="app-my-4 app-text-grey-100"/>
+          </div>
+
+          <p class="app-text-left app-text-dark-grey">
+            <b class="app-text-bold">Prefer to call us instead?</b> 
+            We’re available between 9 AM to 5 PM EST time at 
+            <a href="#" class="app-text-deep-cyan app-text-decoration-none app-text-bold">(123) 4567-8901</a>.
+          </p>
+
+          <button type="button" class="app-btn-md app-bg-neutral-grey app-text-white app-w-max app-text-uppercase">Book a call</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
